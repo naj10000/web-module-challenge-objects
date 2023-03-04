@@ -97,6 +97,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
+console.log(reviews[5]["feedback"])
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -105,7 +106,9 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
+reviews[7]['feedback'] = "this place is chill with really cool people, great for getting work done on weekdays"
 
+console.log(reviews)
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array. 
@@ -119,9 +122,19 @@ Use the addReview function below to do the following:
 */
 
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(array, name, rating, feedback){
+   let newReview = {
+    name : name,
+    rating: rating,
+    feedback: feedback
+   }
+   array.push(newReview)
+  return array
 }
+
+console.log(addReview(reviews, 'Billy', 2, 'Lame food!'))
+
+
 
 
 
@@ -136,9 +149,12 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+
+  return `${array[index]['name']} gave the restaurant a ${array[index]['rating']} star review, and their feedback was: ${array[index]['feedback']}`
 }
+
+console.log(getReviewByIndex(reviews, 0))
 
   
 
